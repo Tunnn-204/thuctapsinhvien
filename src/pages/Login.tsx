@@ -1,6 +1,5 @@
 import { FormEvent, useState } from 'react'
 import { AlertCircle, Eye, EyeOff } from 'lucide-react'
-import logo from '../assets/vlu-logo.png'
 import { SEMESTER } from '../lib/data'
 import { useStore } from '../lib/store'
 import { btnPrimary, inputCls } from '../components/ui'
@@ -19,13 +18,15 @@ export function Login() {
     else window.location.hash = '#/jobs'
   }
 
+  const logoUrl = new URL('../assets/vlu-logo.png', import.meta.url).href;
+
   return (
     <div className="grid min-h-screen lg:grid-cols-[1.05fr_1fr]">
       <aside className="relative hidden overflow-hidden bg-vlu-800 p-12 text-white lg:flex lg:flex-col lg:justify-between">
         <div className="pointer-events-none absolute -right-32 -top-32 size-[420px] rounded-full bg-vlu-600/50 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-24 size-[380px] rounded-full bg-vlu-500/30 blur-3xl" />
         <div className="relative flex items-center gap-3">
-          <img src={logo} alt="Logo Đại học Văn Lang" className="h-12 w-auto object-contain" />
+          <img src="https://Tunnn-204.github.io/thuctapsinhvien/vlu-logo.png" alt="Logo Đại học Văn Lang" className="h-10 w-auto object-contain" />
           <div>
             <p className="text-sm font-semibold leading-tight">Đại học Văn Lang</p>
             <p className="text-xs text-vlu-200">Cổng thông tin thực tập</p>
@@ -41,7 +42,7 @@ export function Login() {
       <main className="flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div className="mb-8 flex items-center gap-3 lg:hidden">
-            <img src={logo} alt="Logo Đại học Văn Lang" className="h-11 w-auto object-contain" />
+            <img src="https://Tunnn-204.github.io/thuctapsinhvien/vlu-logo.png" alt="Logo Đại học Văn Lang" className="h-10 w-auto object-contain" />
             <p className="text-sm font-bold text-vlu-800">Đại học Văn Lang</p>
           </div>
           <h2 className="text-center text-2xl font-extrabold tracking-tight text-stone-900">Đăng nhập</h2>

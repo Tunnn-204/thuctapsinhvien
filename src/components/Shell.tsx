@@ -1,6 +1,5 @@
 import { ReactNode, useEffect, useRef, useState } from 'react'
 import { Bell, Briefcase, Building2, CheckCheck, CheckCircle2, ClipboardSignature, FileText, NotebookPen, Trophy, TriangleAlert, Info, LogOut, PencilLine, XCircle } from 'lucide-react'
-import logo from '../assets/vlu-logo.png'
 import { useStore } from '../lib/store'
 import { navigate } from '../lib/router'
 import { cx, timeAgo } from '../lib/utils'
@@ -93,12 +92,15 @@ export function Avatar({ name, src, size = 36 }: { name: string; src?: string; s
 export function Shell({ active, children }: { active: string; children: ReactNode }) {
   const { user, profile, logout, toasts } = useStore()
   if (!user) return null
+  
+  const logoUrl = new URL('../assets/vlu-logo.png', import.meta.url).href;
+  
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-6 px-5 py-3">
           <a href="#/jobs" className="flex items-center gap-2.5">
-            <img src={logo} alt="Logo Đại học Văn Lang" className="h-10 w-auto object-contain" />
+            <img src="https://Tunnn-204.github.io/thuctapsinhvien/vlu-logo.png" alt="Logo Đại học Văn Lang" className="h-10 w-auto object-contain" />
             <span className="hidden leading-tight sm:block">
               <span className="block text-sm font-extrabold text-vlu-800">VLU Internship</span>
               <span className="block text-[11px] text-stone-500">{SEMESTER}</span>
